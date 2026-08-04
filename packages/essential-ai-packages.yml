@@ -1,0 +1,77 @@
+generated: '2026-08-04'
+method: searched
+source: >-
+  npm, PyPI, RubyGems, crates.io, pkg.go.dev registry probes; github.com/Essential-AI;
+  huggingface.co/EssentialAI; ollama.com/library/rnj-1; lmstudio.ai
+note: >-
+  Essential AI publishes NO client SDK for any language — there is no first-party HTTP API to write
+  one against. Registry probes for essential-ai / essentialai / @essentialai/* on npm and PyPI all
+  returned 404. What the company does ship is a Homebrew cask for its RNJ macOS desktop app and
+  open-weight model distributions. No `SDKs` pointer is wired in apis.yml because no client library
+  exists; wiring one would fabricate an ergonomics signal the provider has not earned.
+packages:
+- language: shell
+  registry: homebrew
+  name: rnj
+  tap: Essential-AI/homebrew-essentialai
+  url: https://github.com/Essential-AI/homebrew-essentialai
+  cask: https://raw.githubusercontent.com/Essential-AI/homebrew-essentialai/main/Casks/rnj.rb
+  install: brew install --cask Essential-AI/essentialai/rnj
+  version: 1.0.0
+  description: RNJ — instant-access AI chat that runs privately on your Mac (macOS >= Ventura, depends on ollama)
+  artifact: https://storage.googleapis.com/homebrew-essentialai/RNJ-1.0.0.zip
+  official: true
+  kind: desktop-app
+- language: n/a
+  registry: ollama
+  name: rnj-1
+  url: https://ollama.com/library/rnj-1
+  install: ollama run rnj-1
+  tags: [latest, 8b]
+  description: Rnj-1 8B open-weight model in the Ollama library, trained from scratch by Essential AI (requires Ollama >= 0.13.3)
+  official: false
+  official_note: hosted in the curated Ollama library namespace; trained and released by Essential AI but not published from an Essential AI account
+  kind: model-distribution
+- language: n/a
+  registry: lm-studio
+  name: essentialai/rnj-1
+  url: https://lmstudio.ai/models/essentialai/rnj-1
+  description: Rnj-1 in the LM Studio model catalog
+  official: false
+  official_note: third-party catalog mirroring the Hugging Face release
+  kind: model-distribution
+registries_probed:
+- {registry: npm, queries: [essential-ai, essentialai, "@essentialai/sdk"], found: 0}
+- {registry: pypi, queries: [essential-ai, essentialai, eai-taxonomy], found: 0}
+- {registry: homebrew, queries: [Essential-AI/homebrew-essentialai], found: 1}
+models:
+  source: https://huggingface.co/EssentialAI
+  note: first-party open-weight releases; the canonical Essential AI distribution channel
+  items:
+  - {id: EssentialAI/rnj-1, license: apache-2.0, pipeline: text-generation}
+  - {id: EssentialAI/rnj-1-instruct, license: apache-2.0, pipeline: text-generation}
+  - {id: EssentialAI/rnj-1.5-instruct, pipeline: text-generation}
+  - {id: EssentialAI/rnj-1-instruct-GGUF, note: quantized GGUF build for llama.cpp/Ollama/LM Studio}
+  - {id: EssentialAI/eai-distill-0.5b}
+datasets:
+  source: https://huggingface.co/datasets?other=EssentialAI
+  items:
+  - {id: EssentialAI/essential-web-v1.0, note: document-level web dataset organized by a twelve-category taxonomy}
+  - {id: EssentialAI/eai-taxonomy-code-w-dclm}
+  - {id: EssentialAI/eai-taxonomy-stem-w-dclm}
+  - {id: EssentialAI/eai-taxonomy-med-w-dclm}
+  - {id: EssentialAI/eai-taxonomy-math-w-fm}
+  - {id: EssentialAI/rnj-1-base-evals}
+  - {id: EssentialAI/rnj-1-instruct-evals}
+source_code:
+  org: https://github.com/Essential-AI
+  first_party_repos:
+  - {name: eai-taxonomy, url: 'https://github.com/Essential-AI/eai-taxonomy', language: Python}
+  - {name: reflection, url: 'https://github.com/Essential-AI/reflection', language: Python, license: MIT}
+  - {name: maxtext-external, url: 'https://github.com/Essential-AI/maxtext-external', language: Python, license: Apache-2.0}
+  - {name: rnj-1-assets, url: 'https://github.com/Essential-AI/rnj-1-assets'}
+  - {name: homebrew-essentialai, url: 'https://github.com/Essential-AI/homebrew-essentialai', language: Ruby}
+x-evidence:
+  fetched: '2026-08-04'
+  github_api: https://api.github.com/orgs/Essential-AI/repos
+  huggingface_api: https://huggingface.co/api/models?author=EssentialAI

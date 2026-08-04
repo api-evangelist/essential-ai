@@ -1,0 +1,40 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of /.well-known/* on every Essential AI host in apis.yml
+result: none
+note: >-
+  Every /.well-known/ discovery path was probed on both essential.ai and www.essential.ai and every
+  one returned HTTP 404 with an HTML body (the Next.js 404 page). No SecurityTxt, no OIDC/OAuth
+  discovery document, no api-catalog, no ai-plugin, and no A2A agent card is published. Absence is
+  the recorded result, not a gap in the probe — no WellKnown or SecurityTxt pointer is wired in
+  apis.yml because nothing was found. The api.essential.ai and app.essential.ai hostnames resolve
+  (Cloudflare) but the origins returned 522/526 and served nothing.
+hosts:
+- host: https://www.essential.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/mcp.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://essential.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/mcp.json, status: 404}
+  - {path: /llms.txt, status: 404}
+x-evidence:
+  fetched: '2026-08-04'
+  method: curl HEAD/GET, no credentials
+  documents_found: 0

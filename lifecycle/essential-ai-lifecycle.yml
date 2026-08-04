@@ -1,0 +1,48 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  https://www.essential.ai/research/rnj-1, https://huggingface.co/api/models?author=EssentialAI,
+  https://github.com/Essential-AI — derived from published release metadata
+note: >-
+  Essential AI has no API lifecycle because it operates no API. What it does version is model and
+  dataset releases, and that is what this artifact records. No status page, no deprecation policy,
+  no Sunset/Deprecation header support, and no SLA are published — so no StatusPage and no
+  Deprecation pointer is wired in apis.yml. Probes for status.essential.ai and trust.essential.ai
+  did not resolve.
+versioning:
+  scheme: model-release
+  unit: open-weight model family
+  current: rnj-1.5-instruct
+  channel: https://huggingface.co/EssentialAI
+  docs: https://www.essential.ai/research/rnj-1
+  note: >-
+    Releases are named model families (rnj-1, rnj-1.5) with base / instruct / GGUF variants. There is
+    no semantic-versioned API surface, no version path segment, and no dated version header.
+license:
+  models: apache-2.0
+  datasets: odc-by
+  source: https://huggingface.co/EssentialAI/rnj-1-instruct
+releases:
+- {id: EssentialAI/eai-distill-0.5b, kind: model, published: '2025-06-14', license: apache-2.0}
+- {id: EssentialAI/essential-web-v1.0, kind: dataset, published: '2025-06-17', license: odc-by}
+- {id: EssentialAI/rnj-1, kind: model, published: '2025-11-13', license: apache-2.0}
+- {id: EssentialAI/rnj-1-instruct, kind: model, published: '2025-12-04', license: apache-2.0}
+- {id: EssentialAI/rnj-1-instruct-GGUF, kind: model, published: '2025-12-05', license: apache-2.0}
+- {id: EssentialAI/rnj-1.5-instruct, kind: model, published: '2026-04-22', license: apache-2.0}
+deprecation:
+  policy_url: null
+  sunset_header: false
+  found: false
+sla:
+  url: null
+  uptime_target: null
+  found: false
+status_page:
+  url: null
+  found: false
+  probed: [https://status.essential.ai/, https://www.essential.ai/status]
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-04'
+  huggingface_api: https://huggingface.co/api/models?author=EssentialAI
+  status_probe: status.essential.ai did not resolve (NXDOMAIN via HTTPS probe)

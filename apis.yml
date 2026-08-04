@@ -1,23 +1,86 @@
 aid: essential-ai
 name: Essential AI
-description: 'Essential AI is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Essential AI is a San Francisco artificial-intelligence research company founded in 2023 by Ashish
+  Vaswani and Niki Parmar, two co-authors of the 2017 "Attention Is All You Need" transformer paper.
+  The company builds open-source models, datasets, and training infrastructure to keep frontier AI
+  capability in the open rather than behind closed platforms. Its flagship release is the Rnj-1
+  family — 8B-parameter dense base and instruction-tuned models with a 32K context window, trained
+  from scratch and tuned for code generation, STEM and mathematical reasoning, and agentic tool use,
+  published under Apache 2.0. Essential AI also publishes Essential-Web v1.0, a large document-level
+  web dataset organized by a twelve-category taxonomy, the EAI taxonomy classifier models and
+  domain-filtered corpora, and research on the Muon optimizer, grokking, reflection, long-context
+  perplexity, and large-scale training infrastructure. Distribution is through Hugging Face, GitHub,
+  a Homebrew cask for the RNJ macOS desktop app, and third-party inference platforms (Together AI,
+  OpenRouter, Ollama, LM Studio). As of this profile Essential AI operates no first-party public
+  HTTP API, developer portal, or machine-readable API contract — its public interface is open model
+  weights, datasets, and research code.
+image: https://avatars.githubusercontent.com/u/124820223?v=4
 url: https://raw.githubusercontent.com/api-evangelist/essential-ai/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
+x-harvest-source-url: https://forgeglobal.com/essential-ai_stock/
+x-tier: profiled
 x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.21'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
-- Company
+- artificial-intelligence
+- machine-learning
+- large-language-models
+- open-weight-models
+- ai-research
+- foundation-models
+- training-datasets
+- open-source
+- generative-ai
+- agentic-ai
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1
 common:
 - type: Website
-  url: https://forgeglobal.com/essential-ai_stock/
+  url: https://www.essential.ai/
+- type: About
+  url: https://www.essential.ai/about
+- type: Research
+  url: https://www.essential.ai/research
+- type: News
+  url: https://www.essential.ai/news
+- type: Careers
+  url: https://www.essential.ai/careers
+- type: Contact
+  url: mailto:info@essential.ai
+- type: GitHubOrganization
+  url: https://github.com/Essential-AI
+- type: OpenSource
+  url: https://github.com/Essential-AI
+- type: Models
+  url: https://huggingface.co/EssentialAI
+- type: OpenSourceLicense
+  url: https://huggingface.co/EssentialAI/rnj-1-instruct
+- type: Discord
+  url: https://discord.gg/VPEqUNg6tR
+- type: Community
+  url: https://discord.gg/VPEqUNg6tR
+- type: Twitter
+  url: https://x.com/essential_ai
+- type: LinkedIn
+  url: https://www.linkedin.com/company/essentialai
+- type: Packages
+  url: packages/essential-ai-packages.yml
+- type: LLMsTxt
+  url: llms/essential-ai-llms.txt
+- type: Lifecycle
+  url: lifecycle/essential-ai-lifecycle.yml
+- type: DomainSecurity
+  url: security/essential-ai-domain-security.yml
