@@ -50,15 +50,15 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - LLM
 - open-weight-models
 - AI Research
 - Foundation Models
 - training-datasets
-- Open-Source
+- Open Source
 - Generative AI
-- Agentic AI
+- AI Agents
 tags_raw:
 - artificial-intelligence
 - machine-learning
@@ -70,6 +70,9 @@ tags_raw:
 - open-source
 - generative-ai
 - agentic-ai
+- Machine-Learning
+- Open-Source
+- Agentic AI
 apis: []
 maintainers:
 - FN: Kin Lane
